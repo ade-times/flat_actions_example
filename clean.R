@@ -3,13 +3,13 @@ library(dplyr)
 library(stringr)
 
 # Read in data, with the same name that we specified in `flat.yml`
-raw_data <- readxl::read_excel("./raw.xlsx")
+raw_data <- readxl::read_excel("../Downloads/MPVDatasetDownload.xlsx")
 
 # All the processing!
 clean_data <- raw_data %>%
   mutate(Zipcode = as.character(Zipcode),
-         Year = lubridate::year(Date),
-         Sex = ifelse(is.na(Sex), 'Unknown', Sex))
+         Year = lubridate::year(`Date of Incident (month/day/year)`),
+         Sex = ifelse(is.na(`Victim's gender`), 'Unknown', `Victim's gender`))
 
 ### Additional processing goes here...
 
