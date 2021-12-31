@@ -1,7 +1,7 @@
 name: Flat
 on:
   schedule:
-    - cron: '0 11 * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch: {}
   push:
     paths:
@@ -17,5 +17,7 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://api.coindesk.com/v2/bpi/currentprice.json
-          downloaded_filename: btc-price.json
+          http_url: https://mappingpoliceviolence.org/s/MPVDatasetDownload.xlsx
+          downloaded_filename: raw.xlsx
+          postprocess: ./postprocess.ts # Script to run upon download completion
+
