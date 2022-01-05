@@ -1,4 +1,6 @@
-
+library(dplyr)
+library(tidyr)
+library(zoo)
 
 
 #region_data <- read_csv("https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=newCasesByPublishDate&metric=newCasesBySpecimenDate&metric=cumCasesByPublishDate&format=csv")
@@ -19,7 +21,7 @@ region_data_conv <- raw_data %>%
   mutate(metric = "cases")
 
 # Hospitalisations --------------------------------------------------------
-hosp <- read_csv("https://api.coronavirus.data.gov.uk/v2/data?areaType=nhsRegion&metric=hospitalCases&metric=newAdmissions&metric=covidOccupiedMVBeds&format=csv")
+hosp <- readr::read_csv("https://api.coronavirus.data.gov.uk/v2/data?areaType=nhsRegion&metric=hospitalCases&metric=newAdmissions&metric=covidOccupiedMVBeds&format=csv")
 
 hosp.1 <- hosp %>%
   select(date, region = areaName, newAdmissions, "hospitalBeds" = hospitalCases, covidOccupiedMVBeds)%>%
