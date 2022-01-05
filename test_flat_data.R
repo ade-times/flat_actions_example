@@ -2,7 +2,7 @@
 
 
 #region_data <- read_csv("https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=newCasesByPublishDate&metric=newCasesBySpecimenDate&metric=cumCasesByPublishDate&format=csv")
-raw_data <- readr::read_csv("./raw2.csv")
+raw_data <- readr::read_csv("./raw.csv")
 
 
 # Get Regional data into NHS regions --------------------------------------
