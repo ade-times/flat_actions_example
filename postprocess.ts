@@ -1,6 +1,6 @@
 // Installs necessary packages
 const r_install = Deno.run({
-    cmd: ['sudo', 'Rscript', '-e', "install.packages(c('dplyr', 'readxl', 'readr', 'lubridate', 'tidyr', 'zoo'))"]
+    cmd: ['sudo', 'Rscript', '-e', "install.packages(c('dplyr', 'readr', 'tidyr', 'zoo'))"]
 });
 
 await r_install.status();
