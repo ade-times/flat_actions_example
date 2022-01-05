@@ -17,7 +17,7 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://mappingpoliceviolence.org/s/MPVDatasetDownload.xlsx
-          downloaded_filename: raw.xlsx
+          http_url: https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=newCasesByPublishDate&metric=newCasesBySpecimenDate&metric=cumCasesByPublishDate&format=csv
+          downloaded_filename: raw.csv
           postprocess: ./postprocess.ts # Script to run upon download completion
 
