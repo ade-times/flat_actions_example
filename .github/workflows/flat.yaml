@@ -1,11 +1,9 @@
 name: Flat
 on:
-  schedule:
-    - cron: '*/30 16-19 * * *'
   workflow_dispatch: {}
-  push:
-    paths:
-      - .github/workflows/flat.yml
+  #push:
+    #paths:
+     # - .github/workflows/flat.yml
 jobs:
   scheduled:
     runs-on: ubuntu-latest
